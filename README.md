@@ -27,7 +27,7 @@ This use the Google Speech to text to transcript audio file.
 It supports almost every audio file format as input. 
     
 ```python
-import sigmind_tools
+from sigmind_tools import SigmindTools
 st = SigmindTools()
 
 # call with public audio url
@@ -159,7 +159,7 @@ It returns
 ### Sentiment Analysis
 
 ```python
-import sigmind_tools
+from sigmind_tools import SigmindTools
 st = SigmindTools()
 
 text = """La salud mental abarca una amplia gama de actividades directa
