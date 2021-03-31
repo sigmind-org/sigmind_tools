@@ -2,7 +2,7 @@
 
 Clone this repository and run
 
-`pip install --user https://github.com/sigmind-org/sigmind_tools`
+`pip install --user git+https://github.com/sigmind-org/sigmind_tools`
 
 **Important!** Store your aws credentials to call the services in 
 
