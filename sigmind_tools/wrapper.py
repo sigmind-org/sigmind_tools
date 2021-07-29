@@ -96,7 +96,6 @@ class SigmindTools():
                 - fn (string): local file name 
         """
         kargv['language_code'] = language_code
-        print(kargv)
         return self._generic_call_audio_file('sigmind_lab__speech-2-text', **kargv)
 
     def speech_intervals(self, **kargv):
