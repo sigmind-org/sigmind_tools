@@ -51,6 +51,8 @@ class SigmindTools():
         args_url = set(['url'])
 
         args_received = set(kargv.keys())
+        if 'language_code' in args_received:
+            args_received.remove('language_code')
 
         if args_received == args_s3:
             key = kargv['key']
@@ -68,6 +70,9 @@ class SigmindTools():
         else:
             raise ParameterError
 
+        if 'language_code' in kargv:
+            jdata['language_code'] = kargv['language_code']
+
         return jdata
 
     def _generic_call_audio_file(self, entry, **kargv):
@@ -75,7 +80,7 @@ class SigmindTools():
         res = self._call(entry, jdata)
         return json.loads(res)
 
-    def speech_to_text(self, **kargv):
+    def speech_to_text(self, language_code='es-AR', **kargv):
         """
         Returns the output of the function use the Google speech-2-text api.
         Supports 3 types of parameters, each method is exclusive
@@ -90,6 +95,8 @@ class SigmindTools():
             Parameters for file method:
                 - fn (string): local file name 
         """
+        kargv['language_code'] = language_code
+        print(kargv)
         return self._generic_call_audio_file('sigmind_lab__speech-2-text', **kargv)
 
     def speech_intervals(self, **kargv):

@@ -26,18 +26,21 @@ All functions that receive an audio file has three disjoint ways to get the audi
 This use the Google Speech to text to transcript audio file. 
 It supports almost every audio file format as input. 
     
+This function need *language_code* as an extra paramter.
+
+
 ```python
 from sigmind_tools import SigmindTools
 st = SigmindTools()
 
 # call with public audio url
-st.speech_to_text(url=<PUBLIC_URL_OF_AUDIO_FILE>)
+st.speech_to_text(url=<PUBLIC_URL_OF_AUDIO_FILE>, language_code='en-US')
 
 # call example with s3
-st.speech_to_text(bucket=<BUCKET_NAME>,key=<OBJECT_KEY>)
+st.speech_to_text(bucket=<BUCKET_NAME>,key=<OBJECT_KEY>, language_code='en-US')
 
 # call example with local file
-st.speech_to_text(fn=<LOCAL_FILENAME>)
+st.speech_to_text(fn=<LOCAL_FILENAME>, language_code='en-US')
 
 ```
  
